@@ -1,8 +1,6 @@
 package org.example;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -16,8 +14,8 @@ public class Main {
         try {
             // Read the file for input
             String fileName="test.txt";
-            FileInputStream fn=new FileInputStream(fileName);
-            Scanner fileInput=new Scanner(fn);
+
+
 
             // Displaying the instructions for the command
             System.out.println("--------------------------------------------------");
@@ -30,20 +28,50 @@ public class Main {
             System.out.println("6) Exit Terminal type:: exit");
             System.out.println("--------------------------------------------------");
             while(true){
-                //STEP1:: getting bytes of file
-                long s= fn.getChannel().size();
+
+                // declaring all the variables
+                long noOfBytes=0;
+                int noOfLines = 0;
+                int countWords=0;
+                int lines = 0;
+
                 System.out.println("write command to get result::");
                 Scanner in = new Scanner(System.in);
-                String smm = in.nextLine();
+                String userInput = in.nextLine();
 
                 // if user want to exit
-                if(smm.toLowerCase().contains("exit")){
+                if(userInput.toLowerCase().contains("exit")){
                     break;
                 }
-                if(smm.contains("ccwc")  & smm.contains(fileName)){
-                    if(smm.contains("-c")){
-                        System.out.println("number of bytes ::"+s +fileName);
+
+                BufferedReader reader = new BufferedReader(new FileReader(fileName));
+                String nextLine=reader.readLine();
+                while ( nextLine!= null) {
+                    if(!nextLine.isBlank())
+                    {
+                        countWords += nextLine.strip().trim().split("\\s").length;
                     }
+                    noOfLines++;
+                    nextLine=reader.readLine();
+                }
+                reader.close();
+
+                if(userInput.contains("ccwc")  & userInput.contains(fileName)){
+                    if(userInput.contains("-c")){
+                        FileInputStream fn=new FileInputStream(fileName);
+                        noOfBytes= fn.getChannel().size();
+                        fn.close();
+                        System.out.println("number of bytes ::"+noOfBytes+" "+fileName);
+                    }else if(userInput.contains("-l")){
+                        System.out.println("number of lines ::"+noOfLines+" " +fileName);
+                    }else if(userInput.contains("-w")){
+                        System.out.println("number of words ::"+countWords+" " +fileName);
+                    }else if(userInput.contains("-m")){
+                        System.out.println("number of lines ::"+lines+" " +fileName);
+                    }else{
+
+                    }
+
                 }else{
                     System.out.println("please provide correct command");
                 }
