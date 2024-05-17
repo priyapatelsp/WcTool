@@ -33,6 +33,7 @@ public class Main {
                 long noOfBytes=0;
                 int noOfLines = 0;
                 int countWords=0;
+                int countChar=0;
                 int lines = 0;
 
                 System.out.println("write command to get result::");
@@ -50,26 +51,29 @@ public class Main {
                     if(!nextLine.isBlank())
                     {
                         countWords += nextLine.strip().trim().split("\\s").length;
+                        countChar+=nextLine.strip().trim().length();
                     }
                     noOfLines++;
                     nextLine=reader.readLine();
                 }
                 reader.close();
 
+                FileInputStream fn=new FileInputStream(fileName);
+                noOfBytes= fn.getChannel().size();
+                fn.close();
+
                 if(userInput.contains("ccwc")  & userInput.contains(fileName)){
                     if(userInput.contains("-c")){
-                        FileInputStream fn=new FileInputStream(fileName);
-                        noOfBytes= fn.getChannel().size();
-                        fn.close();
+
                         System.out.println("number of bytes ::"+noOfBytes+" "+fileName);
                     }else if(userInput.contains("-l")){
                         System.out.println("number of lines ::"+noOfLines+" " +fileName);
                     }else if(userInput.contains("-w")){
                         System.out.println("number of words ::"+countWords+" " +fileName);
                     }else if(userInput.contains("-m")){
-                        System.out.println("number of lines ::"+lines+" " +fileName);
+                        System.out.println("number of lines ::"+countChar+" " +fileName);
                     }else{
-
+                        System.out.println(noOfLines+" "+countWords+" "+noOfBytes+" "+fileName);
                     }
 
                 }else{
