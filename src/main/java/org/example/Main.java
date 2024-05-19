@@ -34,7 +34,6 @@ public class Main {
                 int noOfLines = 0;
                 int countWords=0;
                 int countChar=0;
-                int lines = 0;
 
                 System.out.println("write command to get result::");
                 Scanner in = new Scanner(System.in);
