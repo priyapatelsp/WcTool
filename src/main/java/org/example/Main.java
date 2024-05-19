@@ -65,13 +65,13 @@ public class Main {
                 if(userInput.contains("ccwc")  & userInput.contains(fileName)){
                     if(userInput.contains("-c")){
 
-                        System.out.println("number of bytes ::"+noOfBytes+" "+fileName);
+                        System.out.println("number of bytes:: "+noOfBytes+" "+fileName);
                     }else if(userInput.contains("-l")){
-                        System.out.println("number of lines ::"+noOfLines+" " +fileName);
+                        System.out.println("number of lines:: "+noOfLines+" " +fileName);
                     }else if(userInput.contains("-w")){
-                        System.out.println("number of words ::"+countWords+" " +fileName);
+                        System.out.println("number of words:: "+countWords+" " +fileName);
                     }else if(userInput.contains("-m")){
-                        System.out.println("number of lines ::"+countChar+" " +fileName);
+                        System.out.println("number of lines:: "+countChar+" " +fileName);
                     }else{
                         System.out.println(noOfLines+" "+countWords+" "+noOfBytes+" "+fileName);
                     }
