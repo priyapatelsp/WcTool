@@ -4,7 +4,7 @@
 WordCount Tool is a straightforward command-line application crafted in Java, designed to emulate the wc (word count) command commonly seen in Unix-like operating systems. It counts the number of lines, words, bytes, and characters in a given text file. 
 This tool is build as part of <a href="https://codingchallenges.fyi/challenges/challenge-wc">coding challenges</a> ,to build your own version of the Unix command line tool wc.
 
-<h1>Get started with app</h1>
+<h1>Get started </h1>
 This tool is in java , so please ensure that you have latest java version installed in your device 
 <br><br>
 
