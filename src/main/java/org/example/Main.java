@@ -19,7 +19,7 @@ public class Main {
 
             // Displaying the instructions for the command
             System.out.println("--------------------------------------------------");
-            System.out.println("Bellow is the command and their detail::");
+            System.out.println("Below is the command and their detail::");
             System.out.println("1) To get number of bytes type :: ccwc -c "+fileName);
             System.out.println("2) To get number of Lines type :: ccwc -l "+fileName);
             System.out.println("3) To get number of words type :: ccwc -w "+fileName);
