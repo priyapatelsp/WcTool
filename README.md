@@ -12,7 +12,7 @@ step 1: git clone https://github.com/priyapatelsp/CH1_buildWcTool.git
 
 step 2: click and run the main.java file to start the project
 
-Step 3: As soon as the java program run , you would be provided multiple options get started , provide the instruction choosing from the list of instruction provided.
+Step 3: As soon as the java program run ,you would be provided multiple options get started , provide the instruction choosing from the list of instruction provided.
 
 
 <h1>List of commands</h1>
@@ -23,7 +23,7 @@ Step 3: As soon as the java program run , you would be provided multiple options
 3) To get number of words type :: ccwc -w test.txt
 4) To get number of multibyes type :: ccwc -m test.txt
 5) No option provided will give all output:: ccwc test.txt
-
+<br>
 <h1>Author</h1><br>
 Priya Patel <br>
 Github : <a href="https://github.com/priyapatelsp">priyapatelsp</a>
